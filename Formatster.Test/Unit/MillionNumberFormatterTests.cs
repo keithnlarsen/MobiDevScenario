@@ -14,7 +14,7 @@ namespace Formatster.Tests.Unit
             INumberFormatter formatter = new MillionNumberFormatter();
 
             // Test
-            bool result = formatter.CanFormat(numberToFormat);
+            bool result = formatter.CanHandle(numberToFormat);
 
             //Verify
             Assert.AreEqual(true, result);
@@ -29,7 +29,7 @@ namespace Formatster.Tests.Unit
             INumberFormatter formatter = new MillionNumberFormatter();
 
             // Test
-            string result = formatter.Format(numberToFormat);
+            string result = formatter.Handle(numberToFormat);
 
             //Verify
             Assert.AreEqual(expectedResult, result);
@@ -44,7 +44,7 @@ namespace Formatster.Tests.Unit
             INumberFormatter formatter = new MillionNumberFormatter();
 
             // Test
-            string result = formatter.Format(numberToFormat);
+            string result = formatter.Handle(numberToFormat);
 
             //Verify
             Assert.AreEqual(expectedResult, result);
@@ -59,7 +59,7 @@ namespace Formatster.Tests.Unit
             INumberFormatter formatter = new MillionNumberFormatter();
 
             // Test
-            string result = formatter.Format(numberToFormat);
+            string result = formatter.Handle(numberToFormat);
 
             //Verify
             Assert.AreEqual(expectedResult, result);
@@ -73,7 +73,7 @@ namespace Formatster.Tests.Unit
             INumberFormatter formatter = new MillionNumberFormatter();
 
             // Test
-            bool result = formatter.CanFormat(numberToFormat);
+            bool result = formatter.CanHandle(numberToFormat);
 
             //Verify
             Assert.AreEqual(false, result);
@@ -87,7 +87,7 @@ namespace Formatster.Tests.Unit
             INumberFormatter formatter = new MillionNumberFormatter();
 
             // Test
-            bool result = formatter.CanFormat(numberToFormat);
+            bool result = formatter.CanHandle(numberToFormat);
 
             //Verify
             Assert.AreEqual(false, result);
