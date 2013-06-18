@@ -1,0 +1,52 @@
+# Auto detect text files and perform LF normalization
+*                   text=auto
+
+# All the text files that we want to correct
+*.cs                text diff=csharp
+*.java              text diff=java
+*.html              text diff=html
+*.htm               text diff=html
+*.aspx              text
+*.xaml              text
+*.xml               text
+*.config            text
+*.css               text
+*.xsc               text
+*.xss               text
+*.xsd               text
+*.js                text
+*.sql               text
+*.ps1               text
+*.bat               text
+*.psm1              text
+*.sublime-project   text
+*.sublime-workspace text
+*.nuspec            text
+
+# Image files that we want to leave alone
+*.png               binary
+*.bmp               binary
+*.ico               binary
+*.gif               binary
+*.jpeg              binary
+*.jpg               binary
+
+# Data from programs the we want to leave alone
+*.xls               binary
+*.doc               binary
+*.pdf               binary
+
+# Database and cert files that we want to leave alone
+*.mdf               binary
+*.ldf               binary
+*.pfx               binary
+
+# Assemblies that we want to leave alone
+*.dll               binary
+
+# Solution files
+*.csproj            text merge=union
+*.sln               text merge=union eol=crlf
+
+*.docx              diff=astextplain
+*.DOCX              diff=astextplain
