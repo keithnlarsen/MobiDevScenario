@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Unit\BillionNumberFormatterTests.cs" />
-    <Compile Include="Unit\DefaultNumberFormatterTests.cs" />
-    <Compile Include="Unit\MillionNumberFormatterTests.cs" />
-    <Compile Include="Unit\TrillionNumberFormatterTests.cs" />
+    <Compile Include="Unit\Formatters\BillionNumberFormatterTests.cs" />
+    <Compile Include="Unit\Formatters\DefaultNumberFormatterTests.cs" />
+    <Compile Include="Unit\Formatters\MillionNumberFormatterTests.cs" />
+    <Compile Include="Unit\Formatters\TrillionNumberFormatterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
