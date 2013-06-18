@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BillionNumberFormatter.cs" />
+    <Compile Include="DefaultNumberFormatter.cs" />
     <Compile Include="INumberFormatter.cs" />
     <Compile Include="MillionNumberFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
