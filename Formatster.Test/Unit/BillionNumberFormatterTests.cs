@@ -7,10 +7,23 @@ namespace Formatster.Tests.Unit
     public class BillionNumberFormatterTests
     {
         [Test]
-        public void ShouldConvertBillionWithDecimalThatHasToRoundUp()
-        {
+        public void ShouldConvertBillionWithDecimalsToDecimalThatDoesNotRoundUp() {
             // Setup
-            const long numberToFormat = 12350000000;
+            const double numberToFormat = 12330000000.23;
+            const string expectedResult = "12.3B";
+            INumberFormatter formatter = new BillionNumberFormatter();
+
+            // Test
+            string result = formatter.Format(numberToFormat);
+
+            //Verify
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void ShouldConvertBillionToDecimalThatHasToRoundUp() {
+            // Setup
+            const double numberToFormat = 12350000000;
             const string expectedResult = "12.4B";
             INumberFormatter formatter = new BillionNumberFormatter();
 
@@ -22,10 +35,9 @@ namespace Formatster.Tests.Unit
         }
 
         [Test]
-        public void ShouldConvertBillionWithNoDecimal()
-        {
+        public void ShouldConvertBillionToNoDecimalNumber() {
             // Setup
-            const long numberToFormat = 1000000000;
+            const double numberToFormat = 1000000000;
             const string expectedResult = "1B";
             INumberFormatter formatter = new BillionNumberFormatter();
 

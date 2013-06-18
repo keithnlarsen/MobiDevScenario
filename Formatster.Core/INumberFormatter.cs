@@ -2,6 +2,6 @@ namespace Formatster.Core
 {
     public interface INumberFormatter
     {
-        string Format(long numberToFormat);
+        string Format(double numberToFormat);
     }
 }

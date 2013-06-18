@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Unit\BillionNumberFormatterTests.cs" />
+    <Compile Include="Unit\MillionNumberFormatterTests.cs" />
     <Compile Include="Unit\TrillionNumberFormatterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
