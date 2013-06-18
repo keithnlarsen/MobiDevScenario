@@ -7,27 +7,33 @@ namespace Formatster.Core.ViewModels
     {
         private readonly INumberFormatter _numberFormatter;
 
+        private string _formattedNumber;
+        private double _myNumber;
+
         public TestViewModel(INumberFormatter numberFormatter)
         {
             _numberFormatter = numberFormatter;
         }
 
-        private long _myNumber;
-
-        public long MyNumber
+        public double MyNumber
         {
             get { return _myNumber; }
             set
             {
                 _myNumber = value;
                 RaisePropertyChanged(() => MyNumber);
-                RaisePropertyChanged(() => FormattedNumber);
+                FormattedNumber = _numberFormatter.PrettyPrint(_myNumber);
             }
         }
 
         public string FormattedNumber
         {
-            get { return _numberFormatter.PrettyPrint(_myNumber); }
+            get { return _formattedNumber; }
+            set
+            {
+                _formattedNumber = value;
+                RaisePropertyChanged(() => FormattedNumber);
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Formatster.Core.Formatters
             if (CanHandle(numberToFormat))
                 return Handle(numberToFormat);
 
-            return _nextFormatter.Handle(numberToFormat);
+            return _nextFormatter.PrettyPrint(numberToFormat);
         }
 
         public abstract string Handle(double numberToFormat);
@@ -20,8 +20,8 @@ namespace Formatster.Core.Formatters
         {
             if (_nextFormatter == null)
                 _nextFormatter = numberFormatter;
-
-            _nextFormatter.AddFormatterToChain(numberFormatter);
+            else
+                _nextFormatter.AddFormatterToChain(numberFormatter);
         }
     }
 }
