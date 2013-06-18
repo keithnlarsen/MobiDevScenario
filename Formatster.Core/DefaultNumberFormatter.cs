@@ -6,5 +6,10 @@ namespace Formatster.Core
         {
             return numberToFormat.ToString();
         }
+
+        public bool CanFormat(double numberToFormat)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

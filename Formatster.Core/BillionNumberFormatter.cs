@@ -6,5 +6,10 @@ namespace Formatster.Core
         {
             return (numberToFormat / 1000000000D).ToString("0.#") + "B";
         }
+
+        public bool CanFormat(double numberToFormat)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

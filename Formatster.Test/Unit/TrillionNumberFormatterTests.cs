@@ -7,20 +7,6 @@ namespace Formatster.Tests.Unit
     public class TrillionNumberFormatterTests
     {
         [Test]
-        public void ShouldConvertTrillionWithDecimalsToDecimalThatDoesNotRoundUp() {
-            // Setup
-            const double numberToFormat = 12330000000000.23;
-            const string expectedResult = "12.3T";
-            INumberFormatter formatter = new TrillionNumberFormatter();
-
-            // Test
-            string result = formatter.Format(numberToFormat);
-
-            //Verify
-            Assert.AreEqual(expectedResult, result);
-        }
-
-        [Test]
         public void ShouldConvertTrillionToDecimalThatHasToRoundUp()
         {
             // Setup
@@ -48,6 +34,48 @@ namespace Formatster.Tests.Unit
 
             //Verify
             Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void ShouldConvertTrillionWithDecimalsToDecimalThatDoesNotRoundUp()
+        {
+            // Setup
+            const double numberToFormat = 12330000000000.23;
+            const string expectedResult = "12.3T";
+            INumberFormatter formatter = new TrillionNumberFormatter();
+
+            // Test
+            string result = formatter.Format(numberToFormat);
+
+            //Verify
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void ShouldBeAbleToConvertANumberThatIsATrillionOrGreater()
+        {
+            // Setup
+            const double numberToFormat = 1233000000000;
+            INumberFormatter formatter = new TrillionNumberFormatter();
+
+            // Test
+            bool result = formatter.CanFormat(numberToFormat);
+
+            //Verify
+            Assert.AreEqual(true, result);
+        }
+
+        [Test]
+        public void ShouldNotAbleToConvertNumberThatIsLessThatATrillion() {
+            // Setup
+            const double numberToFormat = 1233000000;
+            INumberFormatter formatter = new TrillionNumberFormatter();
+
+            // Test
+            bool result = formatter.CanFormat(numberToFormat);
+
+            //Verify
+            Assert.AreEqual(true, result);
         }
     }
 }
