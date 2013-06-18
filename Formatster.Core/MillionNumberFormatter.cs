@@ -9,7 +9,7 @@ namespace Formatster.Core
 
         public bool CanFormat(double numberToFormat)
         {
-            throw new System.NotImplementedException();
+            return (numberToFormat >= 1000000 && numberToFormat < 1000000000);
         }
     }
 }

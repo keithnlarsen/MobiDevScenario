@@ -7,21 +7,22 @@ namespace Formatster.Tests.Unit
     public class MillionNumberFormatterTests
     {
         [Test]
-        public void ShouldConvertMillionWithDecimalsToDecimalThatDoesNotRoundUp() {
+        public void ShouldBeAbleToConvertANumberThatGreaterThanOrEqualToAMillion()
+        {
             // Setup
-            const double numberToFormat = 12330000.23;
-            const string expectedResult = "12.3M";
+            const double numberToFormat = 1000000;
             INumberFormatter formatter = new MillionNumberFormatter();
 
             // Test
-            string result = formatter.Format(numberToFormat);
+            bool result = formatter.CanFormat(numberToFormat);
 
             //Verify
-            Assert.AreEqual(expectedResult, result);
+            Assert.AreEqual(true, result);
         }
 
         [Test]
-        public void ShouldConvertMillionToDecimalThatHasToRoundUp() {
+        public void ShouldConvertMillionToDecimalThatHasToRoundUp()
+        {
             // Setup
             const double numberToFormat = 12350000;
             const string expectedResult = "12.4M";
@@ -35,7 +36,8 @@ namespace Formatster.Tests.Unit
         }
 
         [Test]
-        public void ShouldConvertMillionToNoDecimalNumber() {
+        public void ShouldConvertMillionToNoDecimalNumber()
+        {
             // Setup
             const double numberToFormat = 1000000;
             const string expectedResult = "1M";
@@ -46,6 +48,49 @@ namespace Formatster.Tests.Unit
 
             //Verify
             Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void ShouldConvertMillionWithDecimalsToDecimalThatDoesNotRoundUp()
+        {
+            // Setup
+            const double numberToFormat = 12330000.23;
+            const string expectedResult = "12.3M";
+            INumberFormatter formatter = new MillionNumberFormatter();
+
+            // Test
+            string result = formatter.Format(numberToFormat);
+
+            //Verify
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void ShouldNotAbleToConvertNumberThatIsGreaterThanOrEqualToABillion()
+        {
+            // Setup
+            const double numberToFormat = 1000000000;
+            INumberFormatter formatter = new MillionNumberFormatter();
+
+            // Test
+            bool result = formatter.CanFormat(numberToFormat);
+
+            //Verify
+            Assert.AreEqual(false, result);
+        }
+
+        [Test]
+        public void ShouldNotAbleToConvertNumberThatIsLessThanAMillion()
+        {
+            // Setup
+            const double numberToFormat = 999999;
+            INumberFormatter formatter = new MillionNumberFormatter();
+
+            // Test
+            bool result = formatter.CanFormat(numberToFormat);
+
+            //Verify
+            Assert.AreEqual(false, result);
         }
     }
 }
