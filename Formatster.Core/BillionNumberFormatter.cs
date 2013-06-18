@@ -1,13 +1,13 @@
 namespace Formatster.Core
 {
-    public class BillionNumberFormatter : INumberFormatter
+    public class BillionNumberFormatter : FormatterBase
     {
-        public string Handle(double numberToFormat)
+        public override string Handle(double numberToFormat)
         {
             return (numberToFormat / 1000000000D).ToString("0.#") + "B";
         }
 
-        public bool CanHandle(double numberToFormat)
+        public override bool CanHandle(double numberToFormat)
         {
             return (numberToFormat >= 1000000000 && numberToFormat < 1000000000000);
         }
