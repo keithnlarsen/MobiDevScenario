@@ -75,7 +75,7 @@ namespace Formatster.Tests.Unit
             bool result = formatter.CanFormat(numberToFormat);
 
             //Verify
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(false, result);
         }
     }
 }
