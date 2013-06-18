@@ -7,12 +7,13 @@ namespace Formatster.Core
     {
         public override void Initialize()
         {
-            var numberFormatter = new TrillionNumberNumberFormatter();
-            numberFormatter.AddFormatterToChain(new BillionNumberNumberFormatter());
-            numberFormatter.AddFormatterToChain(new MillionNumberNumberFormatter());
-            numberFormatter.AddFormatterToChain(new DefaultNumberFormatter());
-            
-            Mvx.RegisterSingleton<INumberFormatter>(numberFormatter);
+            // Register my Chain of Reponsiblity
+            Mvx.RegisterSingleton<INumberFormatter>(
+                new TrillionNumberNumberFormatter()
+                    .AddFormatterToChain(new BillionNumberNumberFormatter())
+                    .AddFormatterToChain(new MillionNumberNumberFormatter())
+                    .AddFormatterToChain(new DefaultNumberFormatter()));
+
             RegisterAppStart<ViewModels.TestViewModel>();
         }
     }

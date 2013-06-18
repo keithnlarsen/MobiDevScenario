@@ -16,12 +16,14 @@ namespace Formatster.Core.Formatters
 
         public abstract bool CanHandle(double numberToFormat);
 
-        public void AddFormatterToChain(NumberFormatterBase numberFormatter)
+        public NumberFormatterBase AddFormatterToChain(NumberFormatterBase numberFormatter)
         {
             if (_nextFormatter == null)
                 _nextFormatter = numberFormatter;
             else
                 _nextFormatter.AddFormatterToChain(numberFormatter);
+
+            return this;
         }
     }
 }
