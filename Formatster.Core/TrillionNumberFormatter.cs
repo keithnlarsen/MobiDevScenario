@@ -4,7 +4,7 @@ namespace Formatster.Core
     {
         public string Format(long numberToFormat)
         {
-            throw new System.NotImplementedException();
+            return (numberToFormat / 1000000000000D).ToString("0.#") + "T";
         }
     }
 }

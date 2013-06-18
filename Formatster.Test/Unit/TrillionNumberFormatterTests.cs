@@ -7,7 +7,22 @@ namespace Formatster.Tests.Unit
     public class TrillionNumberFormatterTests
     {
         [Test]
-        public void SomeFailingTest()
+        public void ShouldConvertTrillionWithDecimalThatHasToRoundUp()
+        {
+            // Setup
+            const long numberToFormat = 12350000000000;
+            const string expectedResult = "12.4T";
+            INumberFormatter formatter = new TrillionNumberFormatter();
+
+            // Test
+            string result = formatter.Format(numberToFormat);
+
+            //Verify
+            Assert.AreEqual(expectedResult, result);
+        }
+
+        [Test]
+        public void ShouldConvertTrillionWithNoDecimal()
         {
             // Setup
             const long numberToFormat = 1000000000000;
