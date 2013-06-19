@@ -2,7 +2,7 @@ properties {
     $framework = '4.5'
     $rootDir = (Resolve-Path $pwd\..\)
     $solutionFile = (Resolve-Path $rootDir\*.sln)
-    $clientProjectFile = (Resolve-Path $rootDir\Formatster.Core\Formatster.Core.csproj)
+    $clientProjectFile = (Resolve-Path $rootDir\Formatster.UI.Wpf\Formatster.UI.Wpf.csproj)
     $testAssembly = "Formatster.Tests"
     $buildDir = (Join-Path $rootDir build)
     $buildArtifactsDir = (Join-Path $rootDir build-artifacts)
