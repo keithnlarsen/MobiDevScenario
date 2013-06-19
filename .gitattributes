@@ -43,6 +43,7 @@
 
 # Assemblies that we want to leave alone
 *.dll               binary
+*.exe               binary
 
 # Solution files
 *.csproj            text merge=union
