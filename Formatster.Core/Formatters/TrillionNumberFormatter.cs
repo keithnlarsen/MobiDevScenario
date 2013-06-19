@@ -1,6 +1,8 @@
+using System;
+
 namespace Formatster.Core.Formatters
 {
-    public class TrillionNumberNumberFormatter : NumberFormatterBase
+    public class TrillionNumberFormatter : NumberFormatterBase
     {
         public override string Handle(double numberToFormat)
         {
@@ -9,7 +11,7 @@ namespace Formatster.Core.Formatters
 
         public override bool CanHandle(double numberToFormat)
         {
-            return (numberToFormat >= 1000000000000);
+            return (Math.Abs(numberToFormat) >= 1000000000000);
         }
     }
 }

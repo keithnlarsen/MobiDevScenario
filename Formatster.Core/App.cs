@@ -9,9 +9,9 @@ namespace Formatster.Core
         {
             // Register my Chain of Reponsiblity
             Mvx.RegisterSingleton<INumberFormatter>(
-                new TrillionNumberNumberFormatter()
-                    .AddFormatterToChain(new BillionNumberNumberFormatter())
-                    .AddFormatterToChain(new MillionNumberNumberFormatter())
+                new TrillionNumberFormatter()
+                    .AddFormatterToChain(new BillionNumberFormatter())
+                    .AddFormatterToChain(new MillionNumberFormatter())
                     .AddFormatterToChain(new DefaultNumberFormatter()));
 
             RegisterAppStart<ViewModels.TestViewModel>();

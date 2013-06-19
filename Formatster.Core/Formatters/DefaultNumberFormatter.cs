@@ -1,3 +1,5 @@
+using System;
+
 namespace Formatster.Core.Formatters
 {
     public class DefaultNumberFormatter : NumberFormatterBase
@@ -9,7 +11,7 @@ namespace Formatster.Core.Formatters
 
         public override bool CanHandle(double numberToFormat)
         {
-            return (numberToFormat < 1000000);
+            return (Math.Abs(numberToFormat) < 1000000);
         }
     }
 }

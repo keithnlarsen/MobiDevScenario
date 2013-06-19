@@ -38,12 +38,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="Formatters\BillionNumberNumberFormatter.cs" />
+    <Compile Include="Formatters\BillionNumberFormatter.cs" />
     <Compile Include="Formatters\DefaultNumberFormatter.cs" />
     <Compile Include="Formatters\NumberFormatterBase.cs" />
     <Compile Include="Formatters\INumberFormatter.cs" />
-    <Compile Include="Formatters\MillionNumberNumberFormatter.cs" />
-    <Compile Include="Formatters\TrillionNumberNumberFormatter.cs" />
+    <Compile Include="Formatters\MillionNumberFormatter.cs" />
+    <Compile Include="Formatters\TrillionNumberFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
   </ItemGroup>
