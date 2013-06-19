@@ -32,7 +32,7 @@ I'm using this "Number Formatting" library inside of 2 applications. The first i
 #### Running the Application ####
 The first thing I ALWAYS do when starting a new project is create build (and usually deploy) scripts.  It's just so critical to TDD in my humble opinion.  It also makes it really easy to hook it up to whatever build and release tools you are using.  For this application I'm using psake (powershell make), you can run this application by using the following at your powershell prompt.
 
-Prerequisites include: Visual Studio 2012, .NET 4.5, Xamarin Studio (this is used for compilation of the Android application)
+Prerequisites include: Visual Studio 2012, .NET 4.5, [Xamarin Studio](http://xamarin.com/download) (this is used for compilation of the Android application)
 
 ```
 c:\Path\to\the\repo> .\build.ps1
